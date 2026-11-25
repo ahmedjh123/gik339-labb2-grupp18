@@ -1,30 +1,39 @@
-// Uppgift 4
+// Hämtar elementen från sidan
 const checkbox = document.getElementById("divStyle");
 const textFields = document.getElementsByClassName("textfield");
-const button = document.getElementsByTagName("button")[0];
-const box = document.querySelector("#box");
+const removeBtn = document.getElementsByTagName("button")[0];
+const output = document.querySelector("#output");
 
-// Uppgift 5
-function handleInput(e) {
+// Körs när man skriver i ett textfält
+function onTextInput(e) {
   console.log(e.target);
 
-  const id = e.target.id;
+  const fieldId = e.target.id;
 
-  if (id == "content") {
-    box.innerHTML = e.target.value;
+  if (fieldId === "content") {
+    output.innerHTML = e.target.value;
   }
 }
 
-// Uppgift 6
+// Byter bakgrundsfärg när checkboxen ändras
 checkbox.addEventListener("change", function () {
-  const color = textFields[0].value; // färgfältet ligger först
-  box.style.backgroundColor = color;
+  let colorField;
+
+  for (const field of textFields) {
+    if (field.id === "color") {
+      colorField = field;
+    }
+  }
+
+  output.style.backgroundColor = colorField.value;
 });
 
-for (let i = 0; i < textFields.length; i++) {
-  textFields[i].addEventListener("input", handleInput);
+// Kopplar funktionen till alla textfält
+for (const field of textFields) {
+  field.addEventListener("input", onTextInput);
 }
 
-button.addEventListener("click", function () {
-  box.remove();
+// Tar bort rutan när man klickar på knappen
+removeBtn.addEventListener("click", function () {
+  output.remove();
 });

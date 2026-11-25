@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Labb 2 - Grupp 18</title>
+  <title>Grupp 18 | Labb 2</title>
   <script src="script.js" defer></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
     }
-    #box {
+    #output {
       width: 300px;
       height: 150px;
-      border: 1px solid black;
+      border: 2px solid #333;
+      border-radius: 8px;
       margin-top: 15px;
+      padding: 10px;
+    }
+    #removeBtn {
+      padding: 6px 14px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Grupp 18</h1>
+  <h1>Labb 2 - Grupp 18</h1>
 
   <p>
     <label for="color">Färg:</label>
@@ -36,8 +42,8 @@
     <input type="checkbox" name="divStyle" id="divStyle" class="checkbox">
   </p>
 
-  <button id="btn">Ta bort</button>
+  <button id="removeBtn">Ta bort rutan</button>
 
-  <div id="box"></div>
+  <div id="output"></div>
 </body>
 </html>
