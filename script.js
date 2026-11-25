@@ -37,5 +37,3 @@ for (const field of textFields) {
 removeBtn.addEventListener("click", function () {
   output.remove();
 });
-
-//ha
